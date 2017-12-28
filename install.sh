@@ -19,7 +19,7 @@ echo "获取并解压Python3.6源码..."
 wget http://on0aob5yd.bkt.clouddn.com/Python-3.6.0.tar.xz && tar xvJf Python-3.6.0.tar.xz && cd Python-3.6.0
 
 echo "构建Python3.6..."
-./configure
+./configure --prefix=/usr/local/software/python/python3.6
 echo "编译安装Python3.6..."
 make&& make install
 
