@@ -19,8 +19,21 @@ echo "获取并解压Python3.6源码..."
 wget http://on0aob5yd.bkt.clouddn.com/Python-3.6.0.tar.xz && tar xvJf Python-3.6.0.tar.xz && cd Python-3.6.0
 
 echo "构建Python3.6..."
-./configure --prefix=/usr/local/software/python/python3.6
+./configure --prefix=/usr/local/software/python3.6
 echo "编译安装Python3.6..."
 make&& make install
+echo "python3.6安装目录为：/usr/local/software/python3.6"
 
+echo "==============================更改/usr/bin/python链接=============================="
+echo "备份之前的链接"
+mv /usr/bin/python /usr/bin/python.backup
+echo "创建新的链接"
+ln -s /usr/local/software/python3.6 /usr/bin/python
+ln -s /usr/local/software/python3.6 /usr/bin/python3
+
+echo "==============================更改yum脚本的python依赖=============================="
+cd /usr/bin
+ls yum*
+echo "yum  yum-debug-dump  yum-groups-manager  yum-builddep  yum-debug-restore  yum-config-manager  yumdownloader"
+echo "更改以上文件头为#!/usr/bin/python2"
 echo "好了,你的Python3.6 for Centos7.0之旅正式开始啦~"
