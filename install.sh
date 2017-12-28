@@ -34,6 +34,7 @@ ln -s /usr/local/software/python3.6 /usr/bin/python3
 echo "==============================更改yum脚本的python依赖=============================="
 cd /usr/bin
 ls yum*
-echo "yum  yum-debug-dump  yum-groups-manager  yum-builddep  yum-debug-restore  yum-config-manager  yumdownloader"
+#echo "yum  yum-debug-dump  yum-groups-manager  yum-builddep  yum-debug-restore  yum-config-manager  yumdownloader"
+echo "/usr/libexec/urlgrabber-ext-down"
 echo "更改以上文件头为#!/usr/bin/python2"
 echo "好了,你的Python3.6 for Centos7.0之旅正式开始啦~"
